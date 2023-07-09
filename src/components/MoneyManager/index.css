@@ -1,0 +1,59 @@
+.back {
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+}
+.back1 {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png');
+  background-size: cover;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.back2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.back3 {
+  display: flex;
+  flex-direction: column;
+}
+.back4 {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  padding: 50px;
+}
+.back5 {
+  display: flex;
+  justify-content: space-between;
+  border-style: solid;
+  padding: 10px;
+}
+.back6 {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  padding: 50px;
+  margin-right: 50px;
+}
+.button {
+  background-color: #0b69ff;
+  border-width: 0;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 10px;
+}
+.para {
+  margin-right: 20px;
+}
+.each_transaction {
+  display: flex;
+}
+.image {
+  height: 3vh;
+}
+.button1 {
+  background-color: transparent;
+  border-width: 0;
+}
