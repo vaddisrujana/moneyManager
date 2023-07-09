@@ -20,7 +20,7 @@ class MoneyManager extends Component {
     transactionList: [],
     title: '',
     amount: '',
-    optionId: transactionTypeOptions[0].optionId,
+    type: transactionTypeOptions[0].displayText,
   }
 
   deleteTransaction = id => {
@@ -55,7 +55,7 @@ class MoneyManager extends Component {
   }
 
   onChangeType = event => {
-    this.setState({optionId: event.target.value})
+    this.setState({type: event.target.value})
   }
 
   getExpenses = () => {
@@ -79,7 +79,7 @@ class MoneyManager extends Component {
         incomeAmount += eachTransaction.amount
       }
     })
-
+    console.log(incomeAmount)
     return incomeAmount
   }
 
@@ -98,12 +98,12 @@ class MoneyManager extends Component {
     })
 
     balanceAmount = incomeAmount - expensesAmount
-
+    console.log(balanceAmount)
     return balanceAmount
   }
 
   render() {
-    const {transactionList, title, amount, optionId} = this.state
+    const {transactionList, title, amount, type} = this.state
     const {balanceAmount} = this.getBalance()
     const {incomeAmount} = this.getIncome()
     const {expensesAmount} = this.getExpenses()
@@ -141,7 +141,7 @@ class MoneyManager extends Component {
                 onChange={this.onChangeAmount}
               />
               <label htmlFor="select">TYPE</label>
-              <select id="select" value={optionId} onChange={this.onChangeType}>
+              <select id="select" value={type} onChange={this.onChangeType}>
                 {transactionTypeOptions.map(each => (
                   <option value={each.optionId} key={each.optionId}>
                     {each.displayText}
@@ -149,7 +149,11 @@ class MoneyManager extends Component {
                 ))}
               </select>
               <div>
-                <button type="submit" className="button">
+                <button
+                  type="submit"
+                  className="button"
+                  onClick={this.getBalance}
+                >
                   ADD
                 </button>
               </div>
